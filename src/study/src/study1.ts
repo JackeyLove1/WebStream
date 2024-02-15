@@ -213,17 +213,20 @@ class Person {
     }
 }
 
-const arr = [10,20]
+const arr = [10, 20]
 console.log(typeof arr)
 let s = new Set<number>()
 console.log(typeof s)
 
-class Pay{}
-class AliPay extends Pay{
+class Pay {
+}
+
+class AliPay extends Pay {
     payid: string
 }
-class WechatPay extends Pay{
-   appid: string
+
+class WechatPay extends Pay {
+    appid: string
 }
 
 let apay = new AliPay();
@@ -235,7 +238,7 @@ console.log("payid" in AliPay)
 console.log("appid" in AliPay)
 console.log(wpay instanceof Pay)
 
-let arrs = [0,1,2,3,4,5]
+let arrs = [0, 1, 2, 3, 4, 5]
 console.log("slice(0, 1): ", arrs.slice(0, 1))
 console.log("slice(1, 3): ", arrs.slice(1, 3))
 console.log("slice(0, -1): ", arrs.slice(0, -1))
@@ -246,25 +249,31 @@ class Order {
     orderid!: string
     ordername!: string
     static count: number
-    printOrd(){}
-    static getCount(){}
+
+    printOrd() {
+    }
+
+    static getCount() {
+    }
 }
 
 
-class ObjectRefImpl<T extends object, K extends keyof T>{
+class ObjectRefImpl<T extends object, K extends keyof T> {
     public readonly __v_isRef = true
-    constructor(private readonly _object: T, private readonly _key: K) {}
 
-    get value(){
+    constructor(private readonly _object: T, private readonly _key: K) {
+    }
+
+    get value() {
         return this._object[this._key]
     }
 
-    set value(newVal){
+    set value(newVal) {
         this._object[this._key] = newVal
     }
 }
 
-type ObjType = {username: string; age: 23}
+type ObjType = { username: string; age: 23 }
 type ObjKeysType<T extends object, K extends T> = K extends keyof K ? K : never;
 type KeysType<K> = K extends keyof ObjType ? K : never
 type TestKeysType = KeysType<"username" | "age">
@@ -278,21 +287,21 @@ enum MessageType {
 }
 
 type Message = {
-    id : number
+    id: number
     type: MessageType
     content: string
 }
 
-const messages : Message[] = [
-    {id: 1, type: MessageType.Image, content:"hello"},
-    {id: 2, type: MessageType.Audio, content:"world"},
-    {id: 3, type: MessageType.Image, content:"hello, world"},
+const messages: Message[] = [
+    {id: 1, type: MessageType.Image, content: "hello"},
+    {id: 2, type: MessageType.Audio, content: "world"},
+    {id: 3, type: MessageType.Image, content: "hello, world"},
 ]
 
-function searchMessage(id:number): Message|undefined;
-function searchMessage(id:MessageType): Message[];
-function searchMessage(param:number|MessageType): Message|Message[]|undefined{
-    if (typeof param === "number"){
+function searchMessage(id: number): Message | undefined;
+function searchMessage(id: MessageType): Message[];
+function searchMessage(param: number | MessageType): Message | Message[] | undefined {
+    if (typeof param === "number") {
         return messages.find(msg => msg.id === param)
     } else {
         return messages.filter(msg => msg.type === param)
@@ -305,15 +314,60 @@ console.log("search id 100: ", searchMessage(100))
 
 class CommercialBank {
     public address: string = "Peking"
-    public name : string = "wangwu"
-    static count : number
+    public name: string = "wangwu"
+    static count: number
 
-    constructor(name: string, address : string) {
+    constructor(name: string, address: string) {
         this.address = address
         this.name = name
     }
 
-    loan() : void {
+    loan(): void {
         console.log(this.name + " is loaning")
     }
 }
+
+interface Customer {
+    custname: string
+    buymoney: number
+}
+
+type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
+
+function getString(): string {
+    return ""
+}
+
+type ResolveType<T> = T extends Promise<infer U> ? U : T;
+const promise1 = new Promise<string>(resolve => {
+    resolve("this is ok!");
+})
+type ResolvePromiseType = ReturnType<typeof promise1>;
+
+type StringReturn = ReturnType<typeof getString>;
+let string_return: StringReturn;
+console.log("string return: ", (typeof string_return))
+
+type Modules = {
+    menu: {
+        setActiveIndex: (index: string) => string,
+        setCollapse: (index: string) => string,
+    }
+
+    tabs: {}
+}
+
+type MB<T, U> = `${T & string} / ${U & string}`
+type TestMB = MB<'menu', 'setActiveIndex' | 'setCollapse'>
+
+type ModulesSpliceKeys<T> = {
+    [Key in keyof T] : T[Key]
+}
+
+type ModulesSpliceKeys_<T> = {
+    [Key in keyof T] : MB<Key, keyof T[Key]>
+}
+
+type TestModulesSpliceKeys_ = ModulesSpliceKeys_<Modules>
+
+type StringExclude= Exclude<string, string | number>
