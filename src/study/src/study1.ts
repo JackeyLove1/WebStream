@@ -250,3 +250,70 @@ class Order {
     static getCount(){}
 }
 
+
+class ObjectRefImpl<T extends object, K extends keyof T>{
+    public readonly __v_isRef = true
+    constructor(private readonly _object: T, private readonly _key: K) {}
+
+    get value(){
+        return this._object[this._key]
+    }
+
+    set value(newVal){
+        this._object[this._key] = newVal
+    }
+}
+
+type ObjType = {username: string; age: 23}
+type ObjKeysType<T extends object, K extends T> = K extends keyof K ? K : never;
+type KeysType<K> = K extends keyof ObjType ? K : never
+type TestKeysType = KeysType<"username" | "age">
+
+const obj2 = new ObjectRefImpl({username: "hello", age: 23}, "username")
+const obj4 = new ObjectRefImpl({username: "hello", age: 23}, "username")
+
+enum MessageType {
+    Image = "Image",
+    Audio = "Audio",
+}
+
+type Message = {
+    id : number
+    type: MessageType
+    content: string
+}
+
+const messages : Message[] = [
+    {id: 1, type: MessageType.Image, content:"hello"},
+    {id: 2, type: MessageType.Audio, content:"world"},
+    {id: 3, type: MessageType.Image, content:"hello, world"},
+]
+
+function searchMessage(id:number): Message|undefined;
+function searchMessage(id:MessageType): Message[];
+function searchMessage(param:number|MessageType): Message|Message[]|undefined{
+    if (typeof param === "number"){
+        return messages.find(msg => msg.id === param)
+    } else {
+        return messages.filter(msg => msg.type === param)
+    }
+}
+
+console.log("search id 1:", searchMessage(1))
+console.log("search type audio: ", searchMessage(MessageType.Audio))
+console.log("search id 100: ", searchMessage(100))
+
+class CommercialBank {
+    public address: string = "Peking"
+    public name : string = "wangwu"
+    static count : number
+
+    constructor(name: string, address : string) {
+        this.address = address
+        this.name = name
+    }
+
+    loan() : void {
+        console.log(this.name + " is loaning")
+    }
+}
