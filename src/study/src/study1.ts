@@ -371,3 +371,30 @@ type ModulesSpliceKeys_<T> = {
 type TestModulesSpliceKeys_ = ModulesSpliceKeys_<Modules>
 
 type StringExclude= Exclude<string, string | number>
+
+type DirectKeys<T> = T extends any ? T : never;
+type CustomersKey = DirectKeys<keyof Customer>;
+
+function simpleDeepCopy<T>(obj: T): T {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+interface Book{
+    ISBN: string
+    book_name?: boolean
+    book_price: string
+    store_count: number
+    publish?: string
+}
+
+type SubBook = Pick<Book, "ISBN" | "book_name">
+
+type OmitBook = Omit<Book, "ISBN">
+
+function simpleDecorator(value: any){
+    console.log(`hi, this is ${value}`);
+    return value
+}
+
+@simpleDecorator
+class DecoratorA{}

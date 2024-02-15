@@ -8,11 +8,33 @@
         p {
             color: blue;
         }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .body div .hello{
+            color: red;
+        }
+        @font-face {
+            font-family: "Droid Serif";
+        }
+        .custom-font{
+            font-family: "emoji";
+        }
+        .c1 {
+            height: 90px;
+            background-color: red;
+        }
+        .c2 {
+            height: 100px;
+            background: linear-gradient(to right, #ffcc00, #ff0066);
+        }
     </style>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body class="body" id="body">
+    <p class="custom-font">Hello, World!</p>
     <h1> This is a Header</h1>
     <p> This is a param </p>
     <a href="https://www.runoob.com"> this is a link</a>
@@ -49,6 +71,17 @@
         <input type="text" id="name" name="name" required>
         <br>
     </form>
+
+    <div>
+        <a class="hello"> a hello </a>
+    </div>
+
+    <div class="c1">
+    </div>
+
+    <div class="c2">
+
+    </div>
 
 
 </body>
