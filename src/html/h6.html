@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mock BiliBli Header Bar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul, ol {
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 147px;
+            height: 60px;
+            background: #f6f7f8;
+            text-align: center;
+            line-height: 60px;
+            font-size: 20px;
+            border: 3px solid #f1f2f3;
+            border-radius: 6px;
+            //border-left-width: 10px;
+            //border-left-color: black;
+            //border-right-style: dot-dot-dash;
+            //border-right-color: red;
+        }
+        .outerNode{
+            width: 1200px;
+            height: 110px;
+            border: 1px solid black;
+        }
+        .outerNode > .left {
+            width: 200px;
+            height: 110px;
+            float: left;
+            background: green;
+        }
+
+        .outerNode > .left > .left_ul{
+            margin-left: 6px;
+            margin-bottom: 17px;
+            margin-top: 17px;
+        }
+
+        .outerNode > .left > .left_ul > li {
+            height: 70px;
+            width: 48px;
+            float: left;
+            margin-right: 22px;
+            list-style: none;
+            background: black;
+        }
+
+        .outerNode > .left > .left_ul > li > .top_imag {
+            height: 48px;
+            width: 48px;
+            float: left;
+            margin-bottom: 10px;
+        }
+
+
+        .outerNode > .right {
+            width: 1000px;
+            height: 110px;
+            float: left;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+<div class="outerBox">
+</div>
+    <div class="outerNode">
+        <div class="left">
+            <ul class="left_ul">
+                <li>
+                    <a href="#">
+                        <div class="top_imag">
+                            <img src="img/book1.png" alt="default">
+                        </div>
+                    </a>
+                </li>
+                <li></li>
+            </ul>
+            <ul class="left_ul">
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class="left_ul">
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+</body>
+</html>
