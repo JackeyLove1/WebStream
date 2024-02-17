@@ -4,7 +4,101 @@
     <meta charset="UTF-8">
     <title>CSS 3</title>
     <style>
+        *{padding: 0; margin: 0; list-style: none;}
+        .card{
+            width: 250px;
+            height: 200px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+        }
+        .card > .header {
+            width: 250px;
+            height: 200px;
+            padding: 10px;
+            background: #4CAF50;
+        }
+        .card > .footer {
+            width: 250px;
+            height: 200px;
+            font-weight: bold;
+            font-size: 2em;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        div.card {
+            width: 250px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+        }
 
+        div.header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 40px;
+        }
+
+        div.container {
+            padding: 10px;
+        }
+        p{
+            word-wrap: break-word;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: bold;
+        }
+        .trans1{
+            width:200px;
+            height:100px;
+            background-color:yellow;
+            /* Rotate div */
+            transform:rotate(270deg);
+        }
+        .rotate1{
+            width:200px;
+            height:100px;
+            background-color:red;
+            transform: rotateX(120deg);
+        }
+        .trans2{
+            width: 100px;
+            height: 100px;
+            transition: 2s;
+            background: yellow;
+        }
+        .trans2:hover{
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+        }
+
+        @keyframes myfirst
+        {
+            0%   {background:red; left:0px; top:0px;}
+            25%  {background:yellow; left:200px; top:0px;}
+            50%  {background:blue; left:200px; top:200px;}
+            75%  {background:green; left:0px; top:200px;}
+            100% {background:red; left:0px; top:0px;}
+        }
+
+        @-webkit-keyframes myfirst /* Safari and Chrome */
+        {
+            0%   {background:red; left:0px; top:0px;}
+            25%  {background:yellow; left:200px; top:0px;}
+            50%  {background:blue; left:200px; top:200px;}
+            75%  {background:green; left:0px; top:200px;}
+            100% {background:red; left:0px; top:0px;}
+        }
+
+        .text3{
+            border: 2px solid black;
+            padding: 100px 20px;
+            width: 300px;
+            resize: both;
+            overflow: auto;
+        }
     </style>
 </head>
 <body>
@@ -12,9 +106,20 @@
     <div class="header">
         <h1> 1 </h1>
     </div>
-    <div class="footer">
+    <div class="container">
         <p> 2024 </p>
     </div>
+</div>
+<div>
+    <p> 1234567891011121314151617181920</p>
+</div>
+
+<div class="trans1"></div>
+<div class="rotate1"></div>
+<div class="trans2"></div>
+
+<div class="text3">
+    Hello, World!
 </div>
 </body>
 </html>
