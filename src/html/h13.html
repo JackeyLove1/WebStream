@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 7</title>
+    <style>
+        *{margin: 0;padding: 0;list-style: none;}
+        ul.pagination{
+            display: inline-block;
+        }
+        ul.pagination > li {
+            list-style: none;
+            display: inline;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        ul.pagination > li > a {
+            color: black;
+            list-style: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+        ul.pagination > li > a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+    </style>
+</head>
+<body>
+<h2 style="margin-bottom: 50px">1234</h2>
+<div>
+    <ul class="pagination">
+        <li><a href="#">«</a></li>
+        <li><a href="#">1</a></li>
+        <li><a class="active" href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">»</a></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 8</title>
+    <style>
+        *{padding: 0; margin: 0; list-style: none}
+        .container{
+            display: inline-block;
+        }
+        .container > ul > li {
+            list-style: none;
+            display: inline-flex;
+            margin: 8px 8px;
+            background-color: #eee;
+        }
+        //.container > ul > li:before{
+        //    padding: 8px;
+        //    color: black;
+        //    content: "/\00a0";
+        //}
+
+        .container > ul > li > a {
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <div> <h2> breadcrumb </h2> </div>
+    <div class="container">
+        <ul>
+            <li> <a> 首页 </a></li>
+            <li> / </li>
+            <li> <a> 前端 </a></li>
+            <li>  / </li>
+            <li> <a> HTML 教程 </a></li>
+            <li>  / </li>
+            <li> HTML 段落 </li>
+        </ul>
+    </div>
+</body>
+</html>
