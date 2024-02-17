@@ -398,3 +398,4 @@ function simpleDecorator(value: any){
 
 @simpleDecorator
 class DecoratorA{}
+

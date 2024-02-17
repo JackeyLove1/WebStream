@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+        .grid-container > div {
+            background-color: deepskyblue;
+            padding: 20px;
+            border: 1px solid ghostwhite;
+            text-align: center;
+            font-size: 30px;
+        }
+        .item1 {
+            grid-column: 1 / 5;
+        }
+        .item4 {
+            grid-row: 2 / 4;
+        }
+    </style>
+</head>
+<body>
+<div class="grid-container">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+    <div class="item9">9</div>
+    <div class="item10">10</div>
+    <div class="item11">11</div>
+    <div class="item12">12</div>
+    <div class="item13">13</div>
+    <div class="item14">14</div>
+    <!--div class="item15">15</div-->
+</div>
+</body>
+</html>
