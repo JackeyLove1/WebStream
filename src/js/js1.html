@@ -3,11 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
-        alert("Hello, JS!")
-    </script>
 </head>
 <body>
+<table id="table">
+    <tr>
+        <td>Your age:</td>
+
+        <td>
+            <label>
+                <input type="radio" name="age" value="young" checked> less than 18
+            </label>
+            <label>
+                <input type="radio" name="age" value="mature"> from 18 to 50
+            </label>
+            <label>
+                <input type="radio" name="age" value="senior"> more than 60
+            </label>
+        </td>
+    </tr>
+</table>
+<form name="my-form">
+    <div class="article">Article</div>
+    <div class="long article">Long article</div>
+</form>
+
+<div id="elem">Hello <b>World</b></div>
+
+<div id="elem">JavaScript assigned the property "hidden"</div>
 
 </body>
+<script lang="js">
+    // let tables = document.getElementsByTagName("table")
+    // let inputs = tables.getElementsByTagName('input');
+    // for (let input of inputs) {
+    //     alert( input.value + ': ' + input.checked );
+    // }
+
+    let form = document.getElementsByName("my-form")
+    // alert("form langth: " + form.length.toString())
+
+    // alert(elem.innerHTML)
+    setTimeout(()=> {
+        elem.hidden = true
+    }, 10)
+</script>
 </html>

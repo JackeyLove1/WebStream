@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mock Mooc</title>
+    <style>
+        *{padding: 0; margin: 0; border: 0;outline: 0;list-style: none}
+        body{
+            font: 14px/1.5 "PingFang SC","微软雅黑","Microsoft YaHei",Helvetica,"Helvetica Neue",Tahoma,Arial,sans-serif;
+            color: #1c1f21;
+            height: 100%;
+        }
+        .class_show {
+            width: 1200px;
+            height: 600px;
+            margin: 100px auto;
+        }
+        .class_show .show_title{
+            height: 30px;
+            background-image: url("img/title.png");
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-size: contain;
+        }
+        .class_show .show_title .show_title_ul{
+            display: flex;
+            align-items: center;
+            margin-left: 120px;
+        }
+        .class_show .show_title .show_title_ul > li{
+            margin-right: 30px;
+            line-height: 14px;
+            font-size: 14px;
+            margin-top: 8px;
+            height: 100%;
+        }
+        .class_show .show_title .show_title_ul > li > a {
+            text-decoration: none;
+            color: black;
+        }
+        .class_show .show_title .show_title_ul > li .active a{
+            font-weight: bold;
+        }
+        .class_show .show_title .show_title_ul > li .line {
+            width: 25px;
+            height: 1px;
+            background: red;
+            bottom: -2px;
+        }
+        .class_show .show_main {
+            display: flex;
+            justify-content: space-between;
+        }
+        .class_show .show_main .show_box {
+            width: 270px;
+            height: 260px;
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            box-shadow: 0 6px 10px 0 rgba(95,101,105,.15);
+            border-radius: 8px;
+            transition: all .2s;
+        }
+        .class_show .show_main .show_box :hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px 0 rgba(95,101,105,.15);
+        }
+        .class_show .show_main .show_box .show_img{
+            width: 100%;
+            height: 150px;
+            border-radius: 8px 8px 0 0;
+            background-image: url("img/box.png");
+            background-size: cover;
+        }
+        .class_show .show_main .show_box .title{
+            width: 100%;
+            height: 40px;
+            color: #545c63;
+            line-height: 20px;
+            margin-bottom: 8px;
+            padding: 0 8px;
+        }
+        .class_show .show_main .show_box .difficulty{
+            width: 100%;
+            height: 20px;
+            color: #9199a1;
+            font-size: 12px;
+            margin-bottom: 8px;
+            padding: 0 8px;
+        }
+        .class_show .show_main .show_box .price{
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            margin-right: 2px;
+            font-weight: 700!important;
+            color: #f01414;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="class_show">
+            <div class="show_title">
+                <ul class="show_title_ul">
+                    <li class="active">
+                        <a href="#"> 推荐</a>
+                        <div class="line"> </div>
+                    </li>
+                    <li>
+                        <a href="#"> 前端开发</a>
+                    </li>
+                    <li>
+                        <a href="#"> 后端开发</a>
+                    </li>
+                    <li>
+                        <a href="#"> 精品免费</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="show_main">
+                <div class="show_box">
+                    <div class="show_img"></div>
+                    <div class="title"><p>慕课甄选-2024年Flutter零基础极速入门到进阶实战</p></div>
+                    <div class="difficulty"><p>中级 · 271人报名 </p></div>
+                    <div class="price"><span>￥399.00</span></div>
+                </div>
+
+                <div class="show_box">
+                    <div class="show_img"></div>
+                    <div class="title"><p>慕课甄选-2024年Flutter零基础极速入门到进阶实战</p></div>
+                    <div class="difficulty"><p>中级 · 271人报名 </p></div>
+                    <div class="price"><span>￥399.00</span></div>
+                </div>
+
+                <div class="show_box">
+                    <div class="show_img"></div>
+                    <div class="title"><p>慕课甄选-2024年Flutter零基础极速入门到进阶实战</p></div>
+                    <div class="difficulty"><p>中级 · 271人报名 </p></div>
+                    <div class="price"><span>￥399.00</span></div>
+                </div>
+
+                <div class="show_box">
+                    <div class="show_img"></div>
+                    <div class="title"><p>慕课甄选-2024年Flutter零基础极速入门到进阶实战</p></div>
+                    <div class="difficulty"><p>中级 · 271人报名 </p></div>
+                    <div class="price"><span>￥399.00</span></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>
