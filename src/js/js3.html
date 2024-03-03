@@ -1,10 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://registry.npmmirror.com/vue/3.3.11/files/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        }
+    </style>
 </head>
-<body>
-$END$
+<body class="bg-gray-900 text-white">
+<div id="app" class="p-8">
+    <div class="flex justify-between items-center mb-10">
+        <div class="text-green-400">新建项目</div>
+        <div class="flex space-x-3">
+            <i class="fas fa-comment-dots text-green-400"></i>
+            <i class="fas fa-edit text-green-400"></i>
+            <i class="fas fa-trash text-green-400"></i>
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-8">
+        <div class="bg-blue-700 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-smile text-yellow-400 mr-2"></i>
+                <div>提出疑问的问题</div>
+            </div>
+            <div>"使用Python实现快速排序并分析其时间复杂度"</div>
+        </div>
+        <div class="bg-blue-700 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-crown text-yellow-400 mr-2"></i>
+                <div>获奖思考的答案</div>
+            </div>
+            <div>"分析阿里巴巴是如何的商业模式和发展历程的原因"</div>
+        </div>
+        <div class="bg-blue-700 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-grin-beam-sweat text-yellow-400 mr-2"></i>
+                <div>获得创意点赞答案</div>
+            </div>
+            <div>"以李嘉诚的成长历史一窥清朝中晚期了的社会"</div>
+        </div>
+    </div>
+    <div class="mt-10 text-center">
+        <div>"AI is significantly higher risk than nuclear weapons. — Elon Musk"</div>
+    </div>
+</div>
+
+<script>
+    const { createApp } = Vue;
+    createApp({}).mount('#app');
+</script>
 </body>
 </html>

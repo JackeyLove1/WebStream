@@ -1,10 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+        }
+        .d1 {
+            background-color: green;
+            position: relative;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .d2 {
+            background-color: yellow;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 25px;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .d3 {
+            background-color: red;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50px;
+            bottom: 50px;
+            left: 25px;
+            right: 25px;
+            text-align: center;
+            justify-items: center;
+        }
+    </style>
 </head>
 <body>
-$END$
+
+<form class="d1">From
+    <div class="d2">DIV
+        <div class="d3">P
+        </div>
+    </div>
+</form>
+
+<div>
+    Counter: <input type="button" value="1" data-counter>
+    On More counter: <input type="button" value="1" data-counter>
+</div>
+
+<div>
+    <button data-toggle-id="subscribe-mail">
+        Show the subscription form
+    </button>
+
+    <form id="subscribe-mail" hidden>
+        Your mail: <input type="email">
+    </form>
+</div>
+
+<div>
+    <a href="/" onclick="event.preventDefault()">here</a>
+</div>
+<script>
+    document.addEventListener('click', function (event){
+        console.log(event.target.dataset)
+        if (event.target.dataset.counter !== undefined){
+            event.target.value++
+        }
+    })
+
+    document.addEventListener('click', function (event){
+        let id = event.target.dataset.toggleId
+        if (!id) return ;
+        let elem = document.getElementById(id);
+        elem.hidden = !elem.hidden
+    })
+</script>
 </body>
+
 </html>
