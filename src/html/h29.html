@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            background: #1F2937;
+        }
+    </style>
+</head>
+<body>
+<div class=" min-h-screen  flex flex-wrap flex-col mx-auto items-center justify-center text-white">
+    <h2 class="font-bold text-3xl mb-2"> Where knowledge begins </h2>
+    <div class="flex flex-col items-center justify-center p-6 shadow-lg">
+        <div class="flex items-center justify-between mb-4 w-full">
+            <input type="text" placeholder="Ask anything..."
+                   class="bg-gray-700 text-white placeholder-gray-400 px-8 py-2 rounded-md w-full focus:outline-none">
+            <button class="ml-6 bg-gray-700 text-white px-4 py-2 rounded-md focus:outline-none">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="w-full flex flex-row flex-wrap mt-1 justify-between ">
+            <button class="bg-gray-600 rounded-lg px-2 py-1 focus:outline-none ml-2 text-sm ">
+                <i class="fas fa-lightbulb text-yellow-500 mr-1"></i>
+                <span>Try searching</span>
+            </button>
+            <button class="bg-gray-600 rounded-lg px-2 py-1 focus:outline-none ml-2 text-sm ">
+                <i class="fas fa-dice text-green-500 mr-1"></i>
+                <span>Playing dice</span>
+            </button>
+            <button class="bg-gray-600 rounded-lg px-2 py-1 focus:outline-none ml-2 text-sm ">
+                <i class="fas fa-guitar text-red-500 mr-1"></i>
+                <span> Guitar riff?</span>
+            </button>
+            <button class="bg-gray-600 rounded-lg px-2 py-1 focus:outline-none ml-2 text-sm ">
+                <i class="fas fa-chart-line text-blue-500 mr-1"></i>
+                <span>Stock Trending</span>
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
