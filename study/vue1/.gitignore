@@ -19,7 +19,6 @@ coverage
 
 # Editor directories and files
 .vscode/*
-!.vscode/settings.json
 !.vscode/extensions.json
 .idea
 *.suo
@@ -28,7 +27,4 @@ coverage
 *.sln
 *.sw?
 
-# Environment variables files
-/service/.env
-
-/study/*/node_modules
+*.tsbuildinfo
