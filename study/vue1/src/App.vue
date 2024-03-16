@@ -26,7 +26,7 @@
   <!--button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
     按钮
   </button-->
-  <div class="bg-white flex flex-row sticky top-0 z-10">
+  <!--div class="bg-white flex flex-row sticky top-0 z-10">
     <ul class="relative flex overflow-x-auto p-1 text-lg text-zinc-600">
       <li
           v-for="item in data"
@@ -118,9 +118,27 @@
   </div>
 
   <div>
-    <PopWindow >
-      <button></button>
+    <PopWindow v-model="propOpen">
+      <button class="w-10 h-10 border-green-500">
+        propOpen Button
+      </button>
     </PopWindow>
+  </div-->
+  <div class="flex flex-col">
+    <div>
+      <button class="btn" @click="changShowModal">
+        Show Modal
+      </button>
+    </div>
+    <div>
+      <Teleport to="body">
+        <PropModal :show="showModal" @close="changShowModal">
+          <template #header>
+            <h3>Customer Header</h3>
+          </template>
+        </PropModal>
+      </Teleport>
+    </div>
   </div>
 </template>
 
@@ -130,6 +148,12 @@ import {ref, reactive, computed, onMounted, onUnmounted} from 'vue';
 import Popup from "@/components/popup.vue";
 import Telephone from "@/components/telephone.vue";
 import PopWindow from "@/components/PopWindow.vue";
+import PropModal from "@/components/PropModal.vue";
+
+const showModal = ref(false)
+const changShowModal = () => {
+  showModal.value = !showModal.value
+}
 
 const propOpen = ref(false)
 
