@@ -124,7 +124,7 @@
       </button>
     </PopWindow>
   </div-->
-  <div class="flex flex-col">
+  <!--div class="flex flex-col">
     <div>
       <button class="btn" @click="changShowModal">
         Show Modal
@@ -139,7 +139,8 @@
         </PropModal>
       </Teleport>
     </div>
-  </div>
+  </div-->
+  <Layout></Layout>
 </template>
 
 <script setup lang="ts">
@@ -149,6 +150,7 @@ import Popup from "@/components/popup.vue";
 import Telephone from "@/components/telephone.vue";
 import PopWindow from "@/components/PopWindow.vue";
 import PropModal from "@/components/PropModal.vue";
+import Layout from '@/layout/index.vue'
 
 const showModal = ref(false)
 const changShowModal = () => {

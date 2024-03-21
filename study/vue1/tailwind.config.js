@@ -7,7 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-
+      height: {
+        header: '72px',
+        main: 'calc(100vh - 72px)'
+      }
     },
   },
   plugins: [
