@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job
+spec:
+  completions: 4
+  parallelism: 2
+  template:
+    metadata:
+      name: job
+    spec:
+      containers:
+        - name: hello
+          image: busybox
+          command: [ "echo", "hello k8s jobs" ]
+      restartPolicy: Never
