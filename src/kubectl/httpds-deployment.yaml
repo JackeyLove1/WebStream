@@ -1,23 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: $Title$
+  name: httpd-deployment
   labels:
-    app: $Title$
+    app: httpd
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: $Title$
+      app: httpd
   template:
     metadata:
-      name: $Title$
+      name: httpd-deployment
       labels:
-        app: $Title$
+        app: httpd
     spec:
       containers:
-        - name: $Title$
-          image: $Image$
+        - name: httpd
+          image: httpd:latest
           imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
       restartPolicy: Always
-      $END$
+      
