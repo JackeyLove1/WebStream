@@ -14,4 +14,8 @@ spec:
       ports:
         - containerPort: 8081
           protocol: TCP
+      livenessProbe:
+        httpGet:
+          port: 8081
+          path: /
   
