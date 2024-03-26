@@ -32,3 +32,5 @@ coverage
 /service/.env
 
 /study/*/node_modules
+/*/*/node_modules
+/*/node_modules
